@@ -23,7 +23,7 @@ da entidade cerveja inválidos ao realizar um cadastro ou atualização.</p>
 Criada para testar requisições POST, PUT, PATCH e DELETE. Foi
 utilizado o Mockito para evitar alterações no banco de dados.
 Para isso foi aplicado o "Mock" na classe de Repositório BeerRepository;</p>
-<p>BeerApplicationTests: classe que utiliza o MockMvc para o teste de todas as requisições
+<p>- BeerApplicationTests: classe que utiliza o MockMvc para o teste de todas as requisições
 implementadas na aplicação. Nesta classe também foi aplicado o "Mock" em BeerRepository.<p>
 <h4>5 - Coleção do Postman</h4>
 <p>Foi gerada uma coleção à partir do Postman Client contendo todas as chamadas para requisições
