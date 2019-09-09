@@ -1,28 +1,32 @@
 package com.beerhouse.customexception;
 
+import java.util.Date;
+
 public class DetalhesErro {
 
-	private String dataHoraFormatada;
+	private Date data;
 
 	private String mensagem;
 
 	private String detalhes;
 
-	public DetalhesErro(String dataHoraFormatada, String mensagem, String detalhes) {
+	public DetalhesErro(Date data, String mensagem, String detalhes) {
 		super();
 
-		this.dataHoraFormatada = dataHoraFormatada;
+		this.data = data;
 		this.mensagem = mensagem;
 		this.detalhes = detalhes;
-	}	
-
-	public String getDataHoraFormatada() {
-		return dataHoraFormatada;
 	}
 
-	public void setDataHoraFormatada(String dataHoraFormatada) {
-		this.dataHoraFormatada = dataHoraFormatada;
+	public Date getData() {
+		return data;
 	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+
 
 	public String getMensagem() {
 		return mensagem;

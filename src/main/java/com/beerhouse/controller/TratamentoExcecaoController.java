@@ -2,6 +2,7 @@ package com.beerhouse.controller;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +22,7 @@ public class TratamentoExcecaoController extends ResponseEntityExceptionHandler 
 	@ExceptionHandler(BeerValidationException.class)
 	public final ResponseEntity<DetalhesErro> handleUserNotFoundException(BeerValidationException ex,
 			WebRequest request) {
-		LocalDateTime dataHoraAtual = LocalDateTime.now();
-
-		SimpleDateFormat formatadorData = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
-		String dataHoraFormatada = formatadorData.format(dataHoraAtual);
-
-		DetalhesErro detErros = new DetalhesErro(dataHoraFormatada, ex.getMessage(), 
+		DetalhesErro detErros = new DetalhesErro(new Date(), ex.getMessage(), 
 				request.getDescription(false));
 
 		return new ResponseEntity<DetalhesErro>(detErros, HttpStatus.BAD_REQUEST);
