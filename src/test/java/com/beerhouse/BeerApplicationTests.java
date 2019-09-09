@@ -4,7 +4,6 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
@@ -32,32 +31,29 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 
 import com.beerhouse.model.Beer;
 import com.beerhouse.repository.BeerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Classe unitária responsável por testes unitários através de MockMvc.
+ * Nessa classe os repositórios e requisições são "mockadas", evitando assim
+ * modificações no banco de dados.
+ * @author lukas
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @ComponentScan(basePackageClasses = BeerApplication.class)
 public class BeerApplicationTests {
-
-	// Links p/ apoio:
-	// https://blog.jayway.com/2014/01/14/unit-testing-spring-mvc-controllers-with-rest-assured/
-	// https://www.mkyong.com/spring-boot/spring-rest-integration-test-example/
-	// https://www.blazemeter.com/blog/spring-boot-rest-api-unit-testing-with-junit/
 
 	@Autowired
 	private MockMvc mockMvc;

@@ -29,6 +29,11 @@ import com.beerhouse.model.Beer;
 import com.beerhouse.repository.BeerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Classe responsável por testes unitários utilizando o Template Rest.
+ * @author lukas
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")

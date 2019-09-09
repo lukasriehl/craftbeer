@@ -56,7 +56,7 @@ public class BeerController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Void> atualiza(@PathVariable Integer id, @RequestBody Beer beer){
+	public ResponseEntity<Void> atualiza(@PathVariable Integer id, @RequestBody Beer beer) {
 		Beer beerToUpdate = beerRepository.findOne(id);
 
 		if (beerToUpdate == null) {
@@ -75,7 +75,7 @@ public class BeerController {
 	}
 
 	@PatchMapping("/{id}")
-	public ResponseEntity<Object> atualizaComPatch(@PathVariable Integer id, @RequestBody Beer beer){
+	public ResponseEntity<Object> atualizaComPatch(@PathVariable Integer id, @RequestBody Beer beer) {
 		Beer beerToUpdate = beerRepository.findOne(id);
 
 		if (beerToUpdate == null) {
@@ -104,5 +104,5 @@ public class BeerController {
 		beerRepository.delete(beerToDelete);
 
 		return ResponseEntity.noContent().build();
-	}	
+	}
 }
